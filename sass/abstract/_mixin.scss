@@ -1,0 +1,39 @@
+@mixin pos-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+}
+
+
+//media query mannager
+
+//1em = 16px
+//1200 = 75em
+//1100 = 68.75
+//900px = 56.25em
+//700px = 43.75
+//600px = 37.5em
+//400px = 25em
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == smallest-phone {
+        @media only screen and (max-width: 25em) {@content};
+    }
+    @if $breakpoint == small-phone {
+        @media only screen and (max-width: 37.5em) {@content};
+    }
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 43.75em) {@content};
+    }
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 56.25em) {@content};
+    }
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 68.75em) {@content};
+    }
+}

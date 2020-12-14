@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after{
+    padding: 0;
+    margin: 0;
+    box-sizing: inherit;
+}
+
+html{
+    font-size: 65.2%;
+    box-sizing: border-box;
+
+    @include respond(tab-port){
+        font-size: 50%;
+    }
+    
+    @include respond(phone){
+        font-size: 47%;
+    }
+
+    @include respond(smallest-phone){
+        font-size: 43%;
+    }
+
+    scroll-behavior: smooth;
+    
+}
+
+body{
+    color: $color-text;
+    animation: page 4s ease .5s backwards;
+    -webkit-animation: page 4s ease .5s backwards;
+}

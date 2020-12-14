@@ -1,0 +1,88 @@
+.footer{
+    padding-top: 5rem;
+    color: #fff;
+    text-align: right;
+
+    &__box{
+        background-color: $color-primary-dark;
+        width: 100%;
+        box-shadow: 0 -2rem 0rem $color-primary;
+        border-top: 2rem solid $color-primary-light;
+    }
+
+    &__content{
+        max-width: 95rem;
+        margin: 0 auto;
+        display: flex;
+        padding: 3rem;
+        justify-content: space-between;
+
+        @include respond(tab-land){
+            max-width: 80rem;
+        }
+
+        @include respond(phone){
+            max-width: 70rem;
+        }
+    }
+
+    &__enamad{
+        display: flex;
+        flex-direction: column;
+        margin-right: auto;
+    }
+
+    &__photo{
+        width: 6.5rem;
+        margin-bottom: 1.1rem;
+    }
+
+    &__nav{
+        width: 16rem;
+        margin-left: -2rem;
+
+        @include respond(small-phone){
+            width: 15rem;
+            margin-left: -4rem;
+        }
+        @include respond(smallest-phone){
+            width: 11rem;
+            margin-left: -1rem;
+        }        
+    }
+
+    &__list{
+        list-style: none;
+    }
+
+    &__item{
+        &:first-child{
+            color: $color-secondary;
+        }
+    }
+
+    &__line{
+        border-top: 2px solid #fff;
+        height: 1px;
+    }
+    &__copyright{
+        padding: 2rem;
+        text-align: right;
+        max-width: 95rem;
+        margin: 0 auto;
+        justify-content: flex-end;
+        @include respond(tab-land){
+            max-width: 80rem;
+        }
+
+        @include respond(phone){
+            max-width: 70rem;
+        }
+    }
+}
+
+.d-none{
+    @include respond(smallest-phone){
+    display: none;
+}
+}

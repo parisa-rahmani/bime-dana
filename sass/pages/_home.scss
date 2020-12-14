@@ -1,0 +1,377 @@
+.container{
+    max-width: 95rem;
+    margin: 0 auto;
+
+    @include respond(tab-land){
+        max-width: 80rem;
+    }
+
+    @include respond(phone){
+        max-width: 70rem;
+    }
+    
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+
+
+
+
+.reminder{
+    position: relative;
+    padding-top: 15rem;
+
+    @include respond(small-phone){
+        padding-top: 14rem;
+        box-shadow: inset 0 2rem 0rem $color-primary,  inset 0 4rem 0rem $color-primary-lighter;
+        border-top: 2rem solid $color-primary-dark-low;
+    }
+
+    &::before{
+        content: '';
+        background-image: url('../img/wave.png');
+        position: absolute;
+        top: 0;
+        left: 0;
+        filter: brightness(0.9);
+        width: 100%;
+        height: 9rem;
+        transform: scaleY(-1);
+        -webkit-filter: brightness(0.9);
+        -webkit-transform: scaleY(-1);
+        -moz-transform: scaleY(-1);
+        -ms-transform: scaleY(-1);
+        -o-transform: scaleY(-1);
+
+        @include respond(small-phone){
+            display: none;
+        }
+}
+
+    &__container{
+        border: 2px solid $color-primary;
+        display: flex;
+        margin: 0 3rem;
+        min-height: 37rem;
+        align-items: center;
+        position: relative;
+        border-radius: 1.5rem;
+        -webkit-border-radius: 1.5rem;
+        -moz-border-radius: 1.5rem;
+        -ms-border-radius: 1.5rem;
+        -o-border-radius: 1.5rem;
+        @include respond(smallest-phone){
+            background-image: linear-gradient(to right bottom, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.65)), url('../img/blog-1.png');            background-size: cover;
+            background-position: center;
+            border: 1.7px solid $color-primary;
+
+        }
+        
+}
+
+    &__img{
+        flex:0 0 35%;
+        padding: 20px;
+        align-self: baseline;
+        img{
+            width: 100%;
+        }
+
+        @include respond(phone){
+            flex:0 0 45%;
+            align-self: center;
+            margin-bottom: 7rem;
+        }
+        @include respond(smallest-phone){
+            display: none;
+        }
+    }
+
+    &__form{
+        flex: 1;
+        align-self: stretch;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: space-around;
+        flex-wrap: wrap;
+        padding: 2rem;
+        direction: rtl; 
+        @include respond(phone){
+            align-self: center;
+            padding: 1rem;
+        }       
+    }
+
+    &__row{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem 2rem;
+
+        &:first-child{
+            padding: 2rem;
+            @include respond(small-phone){
+                padding: 1rem 1rem;
+            }
+        }
+
+        @include respond(small-phone){
+            padding: 0 1rem 1rem;
+        }
+    }
+
+    &__form-input{
+        font-family: inherit;
+        font-size: inherit;
+        color: inherit;
+        width: 100%;
+        text-align: right;
+        border: 2px solid $color-primary;
+        border-radius: 1.5rem;
+        -webkit-border-radius: 1.5rem;
+        -moz-border-radius: 1.5rem;
+        -ms-border-radius: 1.5rem;
+        -o-border-radius: 1.5rem;
+        padding: 1.2rem;
+        position: relative;        
+        
+        &:not(:last-of-type){
+        width: calc(100% - #{$gutter-horizontal} / 2);
+        margin-left: $gutter-horizontal;
+        }        
+
+        &:focus{
+            outline: none;
+            border: 2px solid $color-secondary;
+
+            @include respond(smallest-phone){
+                border: 1.7px solid $color-secondary;    
+            }
+
+        }  
+        
+        @include respond(smallest-phone){
+            border: 1.7px solid $color-primary;
+
+        }
+    }    
+}
+
+
+.blog{
+    padding: 10rem 5rem 0 5rem;
+    text-align: right;
+    
+    @include respond(tab-port){
+        padding: 10rem 10rem 0 10rem;
+    }
+
+    @include respond(phone){
+        padding: 10rem 12rem 0 12rem;
+    }
+
+
+    &__container{
+        padding: 0 7rem;
+    }
+
+    &__slider{
+        max-width: 95rem;
+        margin: 0 auto;
+    }
+
+    &__item{
+        width: calc(100% - 2 * #{$gutter-horizontal-blog} /4);
+        margin-right: $gutter-horizontal-blog;
+        box-shadow: $shadow-dark-low;
+        height: auto;
+        border-radius: 1.5rem;
+        -webkit-border-radius: 1.5rem;
+        -moz-border-radius: 1.5rem;
+        -ms-border-radius: 1.5rem;
+        -o-border-radius: 1.5rem;
+        overflow: hidden;
+        cursor: pointer;
+        transition: all .2s;
+
+        @include respond(tab-land){
+            width: calc(100% - 2 * #{$gutter-horizontal-blog-res} /4);
+            margin-right: $gutter-horizontal-blog-res;
+        }
+
+        @include respond(tab-port){
+            width: calc(100% - 2 * #{$gutter-horizontal-blog} /4);
+            margin-right: $gutter-horizontal-blog;
+        }
+
+        &:hover{
+            transform: translateY(-3px);
+            -webkit-transform: translateY(-3px);
+            -moz-transform: translateY(-3px);
+            -ms-transform: translateY(-3px);
+            -o-transform: translateY(-3px);
+}
+}
+
+    &__item-picture{
+        background-size: cover;
+        background-position: center;
+        height: 15rem;
+    }
+
+    &__item-picture--1{
+        background-image: url('../img/blog1.png');
+    }
+    &__item-picture--2{
+        background-image: url('../img/blog2.png');
+    }
+    &__item-picture--3{
+        background-image: url('../img/blog3.png');
+    }
+    &__item-picture--4{
+        background-image: url('../img/blog4.png');
+    }
+
+    &__item-detail{
+        padding: 2rem 2rem 1rem;
+        text-align: right;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__item-more:link,
+    &__item-more:visited{
+        text-align: center;
+        color: $color-secondary;
+        font-weight: 700;
+        text-decoration: none;
+        font-size: 1.1rem;
+        margin-top: 0.3rem;
+    }
+
+}
+
+
+
+.link,
+.link:link,
+.link:visited,
+.link:active{
+    text-decoration: none;
+    color: inherit;
+}
+
+.about{
+    padding-top: 10rem;
+    
+    .row{
+        justify-content: center;
+        align-items: flex-end;
+    }
+    &__imgbox{
+        align-self: stretch;
+        width: 15rem;
+
+        @include respond(small-phone){
+            width: 10rem;
+        }
+    }
+
+    &__img{
+        width: 100%;
+
+    }
+
+    &__count{
+        align-self: stretch;
+        display: flex;
+        flex: 0 0 50%;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: flex-end;
+        align-content: flex-end;
+    }
+
+    &__count-item{
+        width: 45%;
+        text-align: center;
+        
+}
+
+    &__count-text{
+        border: 2px solid $color-primary;
+        border-radius: 1.5rem;
+        -webkit-border-radius: 1.5rem;
+        -moz-border-radius: 1.5rem;
+        -ms-border-radius: 1.5rem;
+        -o-border-radius: 1.5rem;
+        padding: 1rem 1.5rem;
+        margin: 1.3rem 2rem;
+        direction: rtl;
+
+        @include respond(small-phone){
+            margin: .5rem;
+            padding: 0.3rem;
+            border-radius: 1rem;
+            -webkit-border-radius: 1rem;
+            -moz-border-radius: 1rem;
+            -ms-border-radius: 1rem;
+            -o-border-radius: 1rem;
+            font-size: smaller;
+}
+
+        
+    }
+
+    &__decription{
+        padding: 4rem;
+
+        .paragraph{
+            text-align: center;
+            line-height: 2.5;
+            direction: rtl;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+    }
+}
+
+.arrow-up{
+    border: solid $color-secondary;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
+    -moz-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    -o-transform: rotate(-135deg);
+    vertical-align: middle;
+}
+
+
+.move-up{
+    .row{
+        justify-content: center;
+    }
+    &__icon{
+        padding: 1%;
+        text-align: center;
+        height: 3.5rem;
+        width: 3.5rem;
+        border: .2rem solid $color-secondary;
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
+    }
+}

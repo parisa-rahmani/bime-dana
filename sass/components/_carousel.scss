@@ -1,0 +1,31 @@
+.owl-carousel .owl-stage-outer {
+       
+    height: 100%;
+    padding: 2rem 2rem;
+}
+
+.owl-carousel .owl-nav button.owl-prev{
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    font-size: 4rem !important;
+    color: $color-primary !important;
+    outline: none;
+
+    @include respond(tab-port){
+        left: -2%;
+    }
+
+}
+.owl-carousel .owl-nav button.owl-next{
+    position: absolute;
+    top: 50%;
+    right: -2%;
+    transform: translateY(-50%);
+    font-size: 4rem !important;
+    color: $color-primary !important;
+    outline: none;
+
+
+}
